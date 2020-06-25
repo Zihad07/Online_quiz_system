@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Quize;
 use Illuminate\Http\Request;
 
 class QuestionController extends Controller
@@ -11,8 +12,9 @@ class QuestionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
+    public function index(Quize $quize){
+//          $questions = $quize->questions()->get();
+            return  view('admin.question.index', ['quize' => $quize]);
 
     }
 
@@ -21,9 +23,9 @@ class QuestionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Quize $quize)
     {
-        //
+        return view('admin.question.question_create',['quize' => $quize]);
     }
 
     /**
@@ -32,9 +34,45 @@ class QuestionController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Quize $quize)
     {
-        //
+//                dd($request->all());
+          $this->validate($request, [
+              'question' => ['required','string'],
+              'options' => ['required','array', 'min:4'],
+              'options.*' => ['required','string', 'max:255'],
+          ]);
+
+            $options = $request->input('options');
+            $answers = $request->has('answers')  ?   $request->input('answers') : [];
+//        dd($request->all());
+//        var_dump($answers);
+
+//        Answer Create
+
+//        $quize = Quize::find(2);
+        $question = $quize->questions()->create(
+            [
+                'question' => $request->input('question')
+            ]
+        );
+        foreach ($options as $index=>$value) {
+            if(in_array(($index),$answers)) {
+//                echo $index.'YES<br>';
+                $question->answers()->create([
+                    'answer' => $value,
+                    'is_correct' => true
+                ]);
+
+            }else {
+                $question->answers()->create([
+                    'answer' => $value,
+                ]);
+//                echo $index.'No<br>';
+            }
+        }
+
+        return back()->with('success','new questions created successfully');
     }
 
     /**

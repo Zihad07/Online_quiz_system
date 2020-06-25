@@ -21,4 +21,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::middleware('auth')->group(function () {
     Route::resource('quize','QuizeController');
+
+    Route::get('{quize}/question','QuestionController@index')->name('question.all');
+    Route::get('{quize}/question/create','QuestionController@create')->name('question.create');
+    Route::post('{quize}/question/store','QuestionController@store')->name('question.store');
+
 });

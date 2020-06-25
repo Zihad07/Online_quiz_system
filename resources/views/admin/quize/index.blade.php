@@ -32,6 +32,8 @@
                        <td colspan="6"> {{ $quize->name }}</td>
                        <td><a href="{{ route('quize.edit',$quize->id) }}" class="btn btn-secondary">Edit</a></td>
                        <td><a href="" class="btn btn-info">View</a></td>
+                       <td><a href="{{ route('question.all', $quize->id) }}" class="btn btn-dark">Questions</a></td>
+                       <td><a href="{{ route('question.create', $quize->id) }}" class="btn btn-outline-primary">Add Question</a></td>
                        <td>
                            <form action="{{route('quize.destroy', $quize->id)}}" method="post">
                                @csrf
