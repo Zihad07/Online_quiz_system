@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\QuestionRequest;
+use App\Question;
 use App\Quize;
 use Illuminate\Http\Request;
 
@@ -16,6 +18,15 @@ class QuestionController extends Controller
 //          $questions = $quize->questions()->get();
             return  view('admin.question.index', ['quize' => $quize]);
 
+    }
+
+    public function questionsView(Quize $quize) {
+//        dd($quize);
+//        $quize = Quize::with('questions')->where('id',$quize->id)->get();
+//        $quesions = Question::where('quize_id',$quize->id)->paginate(5);
+        $quesions = Question::where('quize_id',$quize->id)->get();
+//        dd($quize);
+        return view('admin.question.question_view', ['questions' => $quesions]);
     }
 
     /**
@@ -92,9 +103,9 @@ class QuestionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Quize $quize, Question $question)
     {
-        //
+        return view('admin.question.question_edit', ['question' => $question]);
     }
 
     /**
@@ -104,9 +115,34 @@ class QuestionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(QuestionRequest $request,Quize $quize, Question $question)
     {
-        //
+//        dd($request->all());
+
+        $question->update(['question' => $request->input('question')]);
+
+        $options = $request->input('options');
+        $options_id = $request->input('id');
+        $answers = $request->has('answers')  ?   $request->input('answers') : [];
+
+        foreach($options_id as $index=>$id_value) {
+            if(in_array(($index), $answers)) {
+                $question->answers()->where('id',$id_value)->update([
+                    'answer' => $options[$index],
+                    'is_correct' => true
+                ]);
+            }else {
+                $question->answers()->where('id',$id_value)->update([
+                   'answer' => $options[$index],
+                   'is_correct' => false
+                ]);
+            }
+        }
+
+
+        return back()->with('success','question updated successfully.');
+
+
     }
 
     /**
@@ -115,8 +151,10 @@ class QuestionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Quize $quize,Question $question)
     {
-        //
+        $question->delete();
+
+        return back()->with('success', 'question deleted successfully.');
     }
 }

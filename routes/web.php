@@ -25,5 +25,14 @@ Route::middleware('auth')->group(function () {
     Route::get('{quize}/question','QuestionController@index')->name('question.all');
     Route::get('{quize}/question/create','QuestionController@create')->name('question.create');
     Route::post('{quize}/question/store','QuestionController@store')->name('question.store');
+    Route::delete('{quize}/question/{question}','QuestionController@destroy')->name('question.delete');
+
+    Route::get('{quize}/question/{question}','QuestionController@edit')->name('question.edit');
+    Route::post('{quize}/question/{question}','QuestionController@update')->name('question.update');
+
+//    Quize view with questions and answers
+    Route::get('question/{quize}/view','QuestionController@questionsView')->name('question.view');
+
+
 
 });
