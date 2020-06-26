@@ -3,11 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="96cce131-cf65-4031-b817-a9893ed1c00c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/QuestionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/QuestionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_06_25_050121_create_questions_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_06_25_050121_create_questions_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_06_25_050213_create_answers_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_06_25_050213_create_answers_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/quize/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/quize/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -171,7 +166,8 @@
       <option name="presentableId" value="Default" />
       <updated>1593011046832</updated>
       <workItem from="1593011068544" duration="5405000" />
-      <workItem from="1593057917993" duration="23936000" />
+      <workItem from="1593057917993" duration="24201000" />
+      <workItem from="1593181260001" duration="639000" />
     </task>
     <servers />
   </component>
@@ -183,7 +179,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
