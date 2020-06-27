@@ -6,7 +6,8 @@
 
 @section('content')
 
-    <a href="{{ route('question.create', $quize->id) }}" class="btn btn-primary">Add Question</a>
+    <h3>Quize : {{ $quize->name }}</h3>
+    @include('admin_elements.question_button')
     @include('message_inc.success')
 
     <div class="question mt-2">

@@ -6,9 +6,10 @@
 
 @section('content')
     <h3>Quize : {{ $question->quize->name }}</h3>
+    @include('admin_elements.question_button',['quize'=>$question->quize])
     @include('message_inc.success')
     @include('message_inc.error')
-    <form action="{{ route('question.update', ['quize'=>$question->quize->id, 'question'=>$question->id]) }}" method="post">
+    <form class="mt-2" action="{{ route('question.update', ['quize'=>$question->quize->id, 'question'=>$question->id]) }}" method="post">
 
         @csrf
 {{--        @method('PATCH')--}}

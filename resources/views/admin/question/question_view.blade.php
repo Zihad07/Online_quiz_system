@@ -2,11 +2,13 @@
 
 @section('title','Question | view')
 
-@section('card-title','All Question')
+@section('card-title')
+    All Question : <strong>{{ $quize->name }}</strong>
+@endsection
 
 @section('content')
 
-{{--    <a href="{{ route('question.create', $quize->id) }}" class="btn btn-primary">Add Question</a>--}}
+    @include('admin_elements.question_button')
     @include('message_inc.success')
 
     <div class="question-view mt-2">

@@ -26,7 +26,7 @@ class QuestionController extends Controller
 //        $quesions = Question::where('quize_id',$quize->id)->paginate(5);
         $quesions = Question::where('quize_id',$quize->id)->get();
 //        dd($quize);
-        return view('admin.question.question_view', ['questions' => $quesions]);
+        return view('admin.question.question_view', ['questions' => $quesions, 'quize'=>$quize]);
     }
 
     /**

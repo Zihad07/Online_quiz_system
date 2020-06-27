@@ -6,9 +6,10 @@
 
 @section('content')
     <h3>Quize : {{ $quize->name }}</h3>
+    @include('admin_elements.question_button')
     @include('message_inc.success')
     @include('message_inc.error')
-    <form action="{{ route('question.store',$quize->id) }}" method="post">
+    <form class="mt-2" action="{{ route('question.store',$quize->id) }}" method="post">
 
         @csrf
         <div class="form-group">
