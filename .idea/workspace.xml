@@ -3,6 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="96cce131-cf65-4031-b817-a9893ed1c00c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -126,12 +131,13 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/admin/question" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/js/components" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\OnlineQuiz-master\resources\js\components" />
       <recent name="C:\xampp\htdocs\OnlineQuiz-master\resources\views\admin\question" />
       <recent name="C:\xampp\htdocs\OnlineQuiz-master\resources\views\admin\quize" />
       <recent name="C:\xampp\htdocs\OnlineQuiz-master" />
@@ -169,7 +175,8 @@
       <workItem from="1593057917993" duration="24201000" />
       <workItem from="1593181260001" duration="10645000" />
       <workItem from="1593254342037" duration="2181000" />
-      <workItem from="1593351636463" duration="2484000" />
+      <workItem from="1593351636463" duration="7796000" />
+      <workItem from="1593363750124" duration="2456000" />
     </task>
     <servers />
   </component>

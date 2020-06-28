@@ -16,3 +16,6 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/quize',[\App\Http\Controllers\ApiQuizeQuestionContrller::class, 'quize'])->name('api.quize.all');
+Route::get('/quize/question',[\App\Http\Controllers\ApiQuizeQuestionContrller::class, 'quesstionWithOptions'])->name('api.question.with.options');
