@@ -9,8 +9,8 @@
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">Quize Name</th>
-                        <th scope="col">Last</th>
-                        <th scope="col">Handle</th>
+                        <th scope="col"></th>
+
                     </tr>
                     </thead>
                     <tbody>
@@ -18,7 +18,7 @@
                             <th scope="row">{{ index+1 }}</th>
                             <td>{{ quize.name }}</td>
                             <td>
-                                <a href="" class="btn btn-sm btn-outline-primary">StartQuize</a>
+                                <a :href="fullUrl(quize.id)" target="_blank"   class="btn btn-sm btn-outline-primary">StartQuize</a>
                             </td>
 
                         </tr>
@@ -36,6 +36,7 @@
         data() {
           return {
               url : './api/quize',
+              examUrl: './quize/exam-start',
               quizes: []
           }
         },
@@ -67,6 +68,9 @@
             },
             setData(data) {
                 this.quizes = data
+            },
+            fullUrl(url) {
+                return this.examUrl+'/'+url
             }
         }
     }

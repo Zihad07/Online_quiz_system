@@ -19,8 +19,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/','UserController@show');
-Route::get('/quize/exam-start','UserController@showQuestion');
+Route::get('/','UserController@show')->name('user.home');
+Route::get('/quize/exam-start/{quize}','UserController@showQuestion');
 
 Route::middleware('auth')->group(function () {
     Route::resource('quize','QuizeController');

@@ -22,6 +22,8 @@ window.Vue = require('vue');
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('quize-all', require('./components/QuizeAll.vue').default);
+Vue.component('exam-question', require('./components/ExamQuestion').default);
+Vue.component('question-form', require('./components/QuestionForm').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
