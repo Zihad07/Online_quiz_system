@@ -15,7 +15,12 @@ class QuizeController extends Controller
      */
     public function index()
     {
-        return view('admin.quize.index',['quizes' => Quize::all()]);
+        if(auth()->user()->admin == 1){
+            return view('admin.quize.index',['quizes' => Quize::latest()->get()]);
+
+        }
+
+        return redirect()->route('user.home');
     }
 
     /**

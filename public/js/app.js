@@ -1754,15 +1754,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['quize', 'csrf'],
+  props: ['quize', 'quize_name', 'csrf'],
   components: {
     questionForm: _QuestionForm__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
   data: function data() {
     return {
       url: '../../api/quize/question/' + this.quize,
+      action_url: '../../question/submit/' + this.quize,
       questions: [],
       select: {}
     };
@@ -1791,8 +1795,7 @@ __webpack_require__.r(__webpack_exports__);
 
       this.questions.forEach(function (question) {
         _this2.select[question.id] = 'none';
-      });
-      console.log(this.questions);
+      }); // console.log(this.questions)
     }
   }
 });
@@ -37541,12 +37544,25 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", [
     _c("div", { staticClass: "card" }, [
-      _c("div", { staticClass: "card-header" }, [_vm._v("Example Component")]),
+      _c(
+        "div",
+        {
+          staticClass: "card-header text-dark bg-info text-center",
+          staticStyle: { "font-size": "28px", "font-weight": "bold" }
+        },
+        [
+          _vm._v(
+            "\n                Quize : " +
+              _vm._s(_vm.quize_name) +
+              "\n            "
+          )
+        ]
+      ),
       _vm._v(" "),
       _c("div", { staticClass: "card-body" }, [
         _c(
           "form",
-          { attrs: { action: "../../api/question/submit", method: "post" } },
+          { attrs: { action: _vm.action_url, method: "post" } },
           [
             _c("input", {
               attrs: { type: "hidden", name: "_token" },
@@ -37786,7 +37802,14 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", {}, [
     _c("div", { staticClass: "card" }, [
-      _c("div", { staticClass: "card-header" }, [_vm._v("Quize Component")]),
+      _c(
+        "div",
+        {
+          staticClass: "card-header text-center text-dark",
+          staticStyle: { "font-size": "25px" }
+        },
+        [_vm._v("Take a Quize Exam")]
+      ),
       _vm._v(" "),
       _c("div", { staticClass: "card-body" }, [
         _c("table", { staticClass: "table table-hover table-dark" }, [
@@ -37807,7 +37830,7 @@ var render = function() {
                     "a",
                     {
                       staticClass: "btn btn-sm btn-outline-primary",
-                      attrs: { href: _vm.fullUrl(quize.id), target: "_blank" }
+                      attrs: { href: _vm.fullUrl(quize.id) }
                     },
                     [_vm._v("StartQuize")]
                   )

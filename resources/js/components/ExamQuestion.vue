@@ -1,10 +1,13 @@
 <template>
     <div>
         <div class="card">
-            <div class="card-header">Example Component</div>
+            <div class="card-header text-dark bg-info text-center" style="font-size: 28px; font-weight: bold;">
+                Quize : {{ quize_name }}
+            </div>
 
             <div class="card-body">
-                <form action="../../api/question/submit" method="post">
+                <form v-bind:action="action_url" method="post">
+
 
                     <input type="hidden" name="_token" v-bind:value="csrf">
                     <div v-for="(question,index) in questions" :key="question.id">
@@ -41,13 +44,14 @@
 
     import questionForm from './QuestionForm'
     export default {
-        props : ['quize','csrf'],
+        props : ['quize','quize_name','csrf'],
         components: {
           questionForm,
         },
         data() {
             return {
                 url : '../../api/quize/question/'+this.quize,
+                action_url: '../../question/submit/'+this.quize,
                 questions: [],
                 select : {}
             }
@@ -81,7 +85,7 @@
                     this.select[question.id] = 'none'
                 })
 
-                console.log(this.questions)
+                // console.log(this.questions)
             }
         }
     }

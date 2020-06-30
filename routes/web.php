@@ -20,7 +20,10 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/','UserController@show')->name('user.home');
-Route::get('/quize/exam-start/{quize}','UserController@showQuestion');
+
+Route::middleware('auth')->group(function (){
+    Route::get('/quize/exam-start/{quize}','UserController@showQuestion')->name('user.exam.start');
+});
 
 Route::middleware('auth')->group(function () {
     Route::resource('quize','QuizeController');
@@ -35,6 +38,11 @@ Route::middleware('auth')->group(function () {
 
 //    Quize view with questions and answers
     Route::get('question/{quize}/view','QuestionController@questionsView')->name('question.view');
+
+
+
+    Route::post('/question/submit/{quize}',[\App\Http\Controllers\ApiQuizeQuestionContrller::class, 'questionAnswerAnalysis'])->name('api.question.answer.analysis');
+
 
 
 

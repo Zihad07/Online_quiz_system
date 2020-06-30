@@ -1,7 +1,7 @@
 <template>
     <div class="">
         <div class="card">
-            <div class="card-header">Quize Component</div>
+            <div class="card-header text-center text-dark" style="font-size:25px;">Take a Quize Exam</div>
 
             <div class="card-body">
                 <table class="table table-hover table-dark">
@@ -18,7 +18,7 @@
                             <th scope="row">{{ index+1 }}</th>
                             <td>{{ quize.name }}</td>
                             <td>
-                                <a :href="fullUrl(quize.id)" target="_blank"   class="btn btn-sm btn-outline-primary">StartQuize</a>
+                                <a :href="fullUrl(quize.id)" class="btn btn-sm btn-outline-primary">StartQuize</a>
                             </td>
 
                         </tr>

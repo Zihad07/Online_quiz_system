@@ -19,4 +19,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('/quize',[\App\Http\Controllers\ApiQuizeQuestionContrller::class, 'quize'])->name('api.quize.all');
 Route::get('/quize/question/{quize}',[\App\Http\Controllers\ApiQuizeQuestionContrller::class, 'quesstionWithOptions'])->name('api.question.with.options');
-Route::post('/question/submit',[\App\Http\Controllers\ApiQuizeQuestionContrller::class, 'questionAnswerAnalysis'])->name('api.question.answer.analysis');
+
+
+Route::middleware('auth:api')->group(function (){
+});

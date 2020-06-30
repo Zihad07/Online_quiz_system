@@ -2,13 +2,19 @@
 
 @section('content')
     <div class="card card-body">
+        <div class="card card-body text-center text-gray-dark">
+            <h3>Quize : {{ $result->quize_name }}</h3>
+            <Strong>Name : {{ $result->name }}</Strong>
+            <Strong>Email : {{ $result->email }}</Strong>
+
+        </div>
         <div class="d-flex justify-content-around">
             <div type="button" class="btn btn-primary">
-                Correct <span class="badge badge-light">{{ $right_answer }}</span>
+                Correct <span class="badge badge-light">{{ $result->right_answer }}</span>
             </div>
 
             <div type="button" class="btn btn-danger">
-                Wrong <span class="badge badge-light">{{ $wrong_answer }}</span>
+                Wrong <span class="badge badge-light">{{ $result->wrong_answer }}</span>
             </div>
         </div>
 
