@@ -13,16 +13,18 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th>name</th>
+                    <th>Quize-name</th>
                     <th></th>
                     <th></th>
                     <th></th>
                     <th></th>
                     <th></th>
-
-                    <th>Edit</th>
-                    <th>View</th>
-                    <th>Delete</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
                 </tr>
             </thead>
 

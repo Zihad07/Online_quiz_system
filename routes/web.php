@@ -23,9 +23,12 @@ Route::get('/','UserController@show')->name('user.home');
 
 Route::middleware('auth')->group(function (){
     Route::get('/quize/exam-start/{quize}','UserController@showQuestion')->name('user.exam.start');
+
+    Route::post('/question/submit/{quize}',[\App\Http\Controllers\ApiQuizeQuestionContrller::class, 'questionAnswerAnalysis'])->name('api.question.answer.analysis');
+
 });
 
-Route::middleware('auth')->group(function () {
+Route::middleware(['auth','admin'])->group(function () {
     Route::resource('quize','QuizeController');
 
     Route::get('{quize}/question','QuestionController@index')->name('question.all');
@@ -41,8 +44,10 @@ Route::middleware('auth')->group(function () {
 
 
 
-    Route::post('/question/submit/{quize}',[\App\Http\Controllers\ApiQuizeQuestionContrller::class, 'questionAnswerAnalysis'])->name('api.question.answer.analysis');
 
+
+    Route::get('/result',[\App\Http\Controllers\ResultController::class, 'resultShow'])->name('result.all');
+    Route::get('/result/download',[\App\Http\Controllers\ResultController::class, 'csvFileDownload'])->name('result.download');
 
 
 
