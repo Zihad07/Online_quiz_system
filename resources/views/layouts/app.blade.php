@@ -26,7 +26,8 @@
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
 {{--                    {{ config('app.name', 'Online Quize System') }}--}}
-                    Online Quize System
+                    <img src="{{ asset('img/exam.png')}}" class="img-circle elevation-2" style="width: 80px; margin-left: 80px;" alt="online quize exam image">
+                    <h3 style="font-size: 25px;">Online Quize System</h3>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>

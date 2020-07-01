@@ -2,18 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96cce131-cf65-4031-b817-a9893ed1c00c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/OnlineQuiz-master.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/OnlineQuiz-master.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ResultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ResultController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/quize/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/quize/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin_elements/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin_elements/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/message_inc/success.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/message_inc/success.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -187,7 +177,8 @@
       <workItem from="1593351636463" duration="7796000" />
       <workItem from="1593363750124" duration="2805000" />
       <workItem from="1593415138944" duration="23159000" />
-      <workItem from="1593504158775" duration="16709000" />
+      <workItem from="1593504158775" duration="17189000" />
+      <workItem from="1593580358102" duration="1192000" />
     </task>
     <servers />
   </component>
